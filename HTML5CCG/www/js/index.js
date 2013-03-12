@@ -16,6 +16,13 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+jQuery(document).bind("mobileinit", function() {
+    jQuery.mobile.button.prototype.options.initSelector = "";
+    jQuery.mobile.loadingMessageTextVisible = false;
+    jQuery.mobile.defaultPageTransition = 'slide';
+});
+
 var app = {
     // Application Constructor
     initialize: function() {

@@ -59,11 +59,13 @@
  */
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+    application.statusBarHidden = YES;
+    
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
 
     self.window = [[[UIWindow alloc] initWithFrame:screenBounds] autorelease];
     self.window.autoresizesSubviews = YES;
-
+    
     self.viewController = [[[MainViewController alloc] init] autorelease];
 //    self.viewController.useSplashScreen = YES;
 
