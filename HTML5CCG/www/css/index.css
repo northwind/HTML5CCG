@@ -1,26 +1,8 @@
-
-            ::-moz-selection {
-                background: #b3d4fc;
-                text-shadow: none;
-            }
-
-            ::selection {
-                background: #b3d4fc;
-                text-shadow: none;
-            }
-
-            html {
-                line-height: 1.4;
-                color: #737373;
-                background: #f0f0f0;
-                -webkit-text-size-adjust: 100%;
-                -ms-text-size-adjust: 100%;
-            }
             
-#HUD_TOP { border: none; height: 121px;}
+#HUD_TOP { border: none; height: 121px; position: absolute !important;}
 
 
-#HUD_BELOW { border: none; }
+#HUD_BELOW { border: none; position: absolute !important; }
 
 #HUD_BELOW .ui-btn .ui-icon { width: 50px!important; height: 50px!important; margin-left: -8px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; background-size: 50px 50px; left: 20%; }
 #HUD_BELOW .ui-navbar li .ui-btn-icon-top .ui-btn-inner{ padding-top:28px; padding-bottom:5px; }
@@ -32,3 +14,42 @@
 #strategy .ui-icon { background: url(../images/icon_strategy.png) 50% 50% no-repeat;  }
 
 #HUD_BELOW.ui-footer .ui-btn-icon-top .ui-icon { top:1px; }
+
+#content > div{ display:none; }
+#content #homePanel { display:block; }
+
+
+
+
+/*home panel */
+#team { height : 133px; width:100%; background: url(../images/team.png) 50% 50% no-repeat ; background-size: contain; }
+#team .avatar { margin-top: 28px; display:inline-block; height:50px; width:50px; background:red;  }
+#team .avatar:first-child { margin-left: 36px; position:relative; right : 15px; }
+
+#buttons { padding-top:10px; }
+#buttons > a{ text-decoration:none; margin-left:25px; margin-top:13px; display:inline-block; width: 120px; height:25px; background: url(../images/button_small.png) 50% 50% no-repeat; background-size: contain; text-align:center; color: white; font-size:14px; padding-top:8px; background-size: contain; } 
+
+
+div.normal-effect[data-name="bell-bottom"].invoke {
+  position: absolute;
+  visibility:visible;
+  opacity : 1;
+  top:45px;
+  
+  -webkit-animation: kf-bell-bottom-show 1050ms linear 0ms;
+}
+
+
+
+
+
+@-webkit-keyframes kf-slide-left-small {
+  0% {
+      opacity:0.3;
+      left:0px;
+  }
+  100%{
+      opacity: 1.0;
+      left:45px;
+  }
+}

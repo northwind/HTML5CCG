@@ -17,7 +17,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<html>
+<html class="ios ios5">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -29,6 +29,7 @@ under the License.
 
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.3.0.css" />
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.3.0.css" />
+        <link rel="stylesheet" type="text/css" href="css/base.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <script type="text/javascript" src="js/libs/cordova-2.5.0.js"></script>
@@ -53,29 +54,61 @@ under the License.
             <div id="HUD_TOP" data-theme="a" data-role="header" data-position="fixed">
                 <img src="images/banner.png" width="100%" height="100%">                    
             </div>
-            <div data-role="content">
-                
+            <div id="content">
+                <div id="homePanel" >
+                    <div id="team">
+                        <a href="javasciprt:void(0)" class="avatar"></a>
+                        <a href="javasciprt:void(0)" class="avatar"></a>
+                        <a href="javasciprt:void(0)" class="avatar"></a>
+                        <a href="javasciprt:void(0)" class="avatar"></a>
+                        <a href="javasciprt:void(0)" class="avatar"></a>
+                    </div>
+                    
+                    <div id="buttons">
+                        <a href="javasciprt:void(0)" id="heroBtn">英雄</a>
+                        <a href="javasciprt:void(0)" id="heroBtn">升级</a>
+                        <a href="javasciprt:void(0)" id="heroBtn">进化</a>
+                        <a href="javasciprt:void(0)" id="heroBtn">奖励</a>
+                        <a href="javasciprt:void(0)" id="heroBtn">碎片</a>
+                        <a href="javasciprt:void(0)" id="heroBtn">技能学院</a>
+                    </div>
+                </div>
+                <div id="fubenPanel" >
+                    fuben
+                </div>
+                <div id="fightPanel" >
+                    fight
+                </div>
+                <div id="shopPanel" >
+                    shop
+                </div>
+                <div id="friendsPanel" >
+                    friends
+                </div>
+                <div id="strategyPanel" >
+                    strategy
+                </div>
             </div>
             <div id="HUD_BELOW" data-theme="a" data-role="footer" data-position="fixed">
                 <div data-role="navbar" data-grid="false" >
                     <ul>
                         <li>
-                            <a id="home" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="a.html">主页</a>
+                            <a id="home" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#homePanel">主页</a>
                         </li> 
                         <li>
-                            <a id="fuben" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="a.html">副本</a>
+                            <a id="fuben" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#fubenPanel">副本</a>
                         </li>
                         <li>
-                            <a id="fight" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="a.html">战斗</a>
+                            <a id="fight" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#fightPanel">战斗</a>
                         </li>
                         <li>
-                            <a id="shop" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="a.html">商店</a>
+                            <a id="shop" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#shopPanel">商店</a>
                         </li>
                         <li>
-                            <a id="friends" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="a.html">好友</a>
+                            <a id="friends" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#friendsPanel">好友</a>
                         </li>
                         <li>
-                            <a id="strategy" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="a.html">攻略</a>
+                            <a id="strategy" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#strategyPanel">攻略</a>
                         </li>
                     </ul>
                 </div>

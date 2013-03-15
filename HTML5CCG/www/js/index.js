@@ -47,3 +47,26 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+$( function(){
+    
+    var currentPanel;
+    
+    $("#HUD_BELOW li a").tap( function( e ){
+        e.preventDefault();
+        
+        var target = $(this).attr( "href" );
+        
+        if ( currentPanel )
+            currentPanel.hide(500);
+            
+        currentPanel = $(target).slideDown();
+        
+        return false;
+    } );
+    
+    currentPanel = $("#homePanel");
+    
+} );
+
+

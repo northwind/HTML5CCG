@@ -26,6 +26,7 @@
 //
 
 #import "MainViewController.h"
+#import <Cordova/CDVUserAgentUtil.h>
 
 @implementation MainViewController
 
@@ -73,8 +74,39 @@
 
 - (void)viewDidLoad
 {
+//    self.startPage = @"init.html";
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //copy files from app to document folder
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSError *error;
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSString *diskCachePath = [documentsDirectory stringByAppendingPathComponent:self.wwwFolderName];
+//    NSString *sourcePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.wwwFolderName];
+//    
+//    //delete folder first
+//    if ([fileManager fileExistsAtPath:diskCachePath] == YES) {
+//        [fileManager removeItemAtPath:diskCachePath error:&error];
+//    }
+//    
+//    //copy folder
+//    [fileManager copyItemAtPath:sourcePath toPath:diskCachePath error:&error];
+//    if ( error != nil ){
+//        NSLog(@"copy resources from bundle to document met an error : %@", error);
+//    }
+//    
+//    self.startPage = @"index.html";
+//    [CDVUserAgentUtil acquireLock:^(NSInteger lockToken) {
+//        //refresh start page
+//        NSString* startFilePath = [diskCachePath stringByAppendingPathComponent:[NSString stringWithFormat:@"/%@", self.startPage]];
+//        NSURL *appURL = [NSURL fileURLWithPath:startFilePath];
+//        NSURLRequest* appReq = [NSURLRequest requestWithURL:appURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
+//        [self.webView loadRequest:appReq];
+//    }];
+
 }
 
 - (void)viewDidUnload

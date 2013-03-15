@@ -1,0 +1,38 @@
+/**
+ * @author Ye Tong
+ */
+var Panel = Observable.extend({
+    
+    el  :  null,
+    animating : false,
+    callback : null,
+    scope : null,
+    
+    init : function( id ){
+        this.el = $( id ); 
+    },
+    
+    show : function( callback, scope ){
+        if ( this.animating )
+            return;
+        this.animating = false;
+        
+        this.callback = callback;
+        this.scope = scoep;
+        
+        this.onAnimate();
+    },
+    
+    onAnimate : function(){
+        this.endAnimation();
+    },
+    
+    endAnimation : function(){
+        if ( this.callback ){
+            this.callback.call( this.scope || this, this );
+        }
+    },
+    
+    hide : function( callback, scope ){}
+    
+});
