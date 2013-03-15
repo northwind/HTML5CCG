@@ -2,14 +2,23 @@
  * @author Ye Tong
  */
 
-var Panel = Observable.extend({
+var PanelRouter = Observable.extend({
     
     current : null,
     animating : false,
+    homePanel : null,
     
-    init : function(){},
+    init : function(){
+        
+        this.homePanel = new HomePanel();
+        this.homePanel.init("#homePanel");
+        
+        return this;
+    },
     
     showPanel : function( panel ){
+        
+        panel = this.homePanel;
         
         if ( this.animating )
             return;
@@ -17,10 +26,10 @@ var Panel = Observable.extend({
         
         if ( this.current ){
             this.current.hide( function(){
-               this.showPanelInternal( panel );
+               this.showPanelInternal( this.homePanel );
             }, this );
         }else{
-            this.showPanelInternal( panel );
+            this.showPanelInternal( this.homePanel );
         }
     },
     
@@ -32,3 +41,4 @@ var Panel = Observable.extend({
     
 });
 
+var PanelRouter = new PanelRouter();

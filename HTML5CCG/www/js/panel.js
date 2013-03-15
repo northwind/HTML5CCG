@@ -10,6 +10,8 @@ var Panel = Observable.extend({
     
     init : function( id ){
         this.el = $( id ); 
+        
+        return this;
     },
     
     show : function( callback, scope ){
@@ -18,12 +20,12 @@ var Panel = Observable.extend({
         this.animating = false;
         
         this.callback = callback;
-        this.scope = scoep;
+        this.scope = scope;
         
-        this.onAnimate();
+        this.onShowAnimate();
     },
     
-    onAnimate : function(){
+    onShowAnimate : function(){
         this.endAnimation();
     },
     

@@ -40,7 +40,13 @@ div.normal-effect[data-name="bell-bottom"].invoke {
 }
 
 
-
+.kf-slide-left-small{
+    opacity : 1;
+    position:relative;
+    left:45px;
+    
+    -webkit-animation: kf-slide-left-small 350ms linear 0ms;
+}
 
 
 @-webkit-keyframes kf-slide-left-small {

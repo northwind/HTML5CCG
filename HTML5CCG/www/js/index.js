@@ -50,22 +50,18 @@ var app = {
 
 $( function(){
     
-    var currentPanel;
-    
     $("#HUD_BELOW li a").tap( function( e ){
         e.preventDefault();
         
         var target = $(this).attr( "href" );
         
-        if ( currentPanel )
-            currentPanel.hide(500);
-            
-        currentPanel = $(target).slideDown();
+        PanelRouter.showPanel( target );
         
         return false;
     } );
     
-    currentPanel = $("#homePanel");
+    PanelRouter.init();
+    $("#HUD_BELOW li a:first").tap();
     
 } );
 

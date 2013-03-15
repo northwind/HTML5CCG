@@ -6,14 +6,28 @@ var HomePanel = Panel.extend({
     init : function( id ){
         this._super( id );
         
-        
+        return this;
     },
     
-    onAnimate : function(){
+    onShowAnimate : function(){
         
-        this.el.find("#home").move
+        var buttons = this.el.find("#buttons a");
         
-        this.endAnimation();
+        for(var i=0; i<buttons.length; i++){
+            if ( i%2 == 0 ){
+                // $( buttons.eq(i) ).addClass("");
+            }else{
+                
+            }
+        }
+        
+        $( buttons.eq(0) ).addClass("kf-slide-left-small");
+        
+        var _self=this;
+       setTimeout(function(){
+            _self.endAnimation();
+        },500);        
+        
     }
     
 });
