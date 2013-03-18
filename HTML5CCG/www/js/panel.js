@@ -9,6 +9,8 @@ var Panel = Observable.extend({
     scope : null,
     
     init : function( id ){
+        this._super();
+        
         this.el = $( id ); 
         
         return this;
@@ -17,12 +19,15 @@ var Panel = Observable.extend({
     show : function( callback, scope ){
         if ( this.animating )
             return;
-        this.animating = false;
+        this.animating = true;
         
         this.callback = callback;
         this.scope = scope;
         
+        this.el.show();
         this.onShowAnimate();
+        
+        return this;
     },
     
     onShowAnimate : function(){
@@ -30,11 +35,28 @@ var Panel = Observable.extend({
     },
     
     endAnimation : function(){
+        this.animating = false;
+         
         if ( this.callback ){
             this.callback.call( this.scope || this, this );
         }
     },
     
-    hide : function( callback, scope ){}
+    hide : function( callback, scope ){
+        if ( this.animating )
+            return;
+        this.animating = true;
+        
+        this.callback = callback;
+        this.scope = scope;
+        
+        this.onHideAnimate();    
+        
+        return this;    
+    },
+    
+    onHideAnimate : function(){
+        this.endAnimation();
+    }    
     
 });

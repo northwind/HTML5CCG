@@ -50,19 +50,35 @@ var app = {
 
 $( function(){
     
-    $("#HUD_BELOW li a").tap( function( e ){
-        e.preventDefault();
+    function initAll(){
+                
+        $("#content").height( $("body").height() - $("#HUD_TOP").outerHeight(true) - $("#HUD_BELOW").outerHeight() );
         
-        var target = $(this).attr( "href" );
+        //init router
+        PanelRouter.initPanels([{
+            id : "#homePanel",
+            panel : HomePanel
+        },{
+            id : "#fubenPanel",
+            panel : LevelsPanel
+        }]);
+                
+        //init hud below
+        $("#HUD_BELOW li a").tap( function( e ){
+            e.preventDefault();
+            
+            var target = $(this).attr( "href" );
+            
+            PanelRouter.showPanel( target );
+            
+            return false;
+        } );        
         
-        PanelRouter.showPanel( target );
-        
-        return false;
-    } );
+        //default panel
+        $("#fuben").tap();
+    }
     
-    PanelRouter.init();
-    $("#HUD_BELOW li a:first").tap();
-    
+    initAll();
 } );
 
 

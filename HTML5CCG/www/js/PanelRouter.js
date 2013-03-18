@@ -6,19 +6,31 @@ var PanelRouter = Observable.extend({
     
     current : null,
     animating : false,
-    homePanel : null,
+    panels    : null,
     
-    init : function(){
-        
-        this.homePanel = new HomePanel();
-        this.homePanel.init("#homePanel");
-        
+    init : function( config ){
+        this.panels = {};
         return this;
     },
     
-    showPanel : function( panel ){
+    initPanels : function( panels ){
+        var _self = this;
+        $( panels ).each( function(i,n){
+            var panelID =  n["id"] ;
+            var tempPanel = new n["panel"]( panelID );
+            _self.panels[ panelID ] = tempPanel;
+        } );
         
-        panel = this.homePanel;
+        return this;    
+    },
+    
+    showPanel : function( panel ){
+        var panelObject = this.panels[ panel ];
+        if ( !panelObject )
+            return;
+        
+        if ( this.current == panelObject )
+            return;
         
         if ( this.animating )
             return;
@@ -26,16 +38,25 @@ var PanelRouter = Observable.extend({
         
         if ( this.current ){
             this.current.hide( function(){
-               this.showPanelInternal( this.homePanel );
+               this.showPanelInternal( panelObject );
             }, this );
         }else{
-            this.showPanelInternal( this.homePanel );
+            this.showPanelInternal( panelObject );
         }
     },
     
     showPanelInternal : function( panel ){
         this.current = panel.show( function(){
             this.animating = false;
+        }, this );
+    },
+    
+    hidePanel : function(){
+        if ( !this.current )
+            return;
+            
+        this.current.hide( function(){
+          this.current = null;
         }, this );
     }
     

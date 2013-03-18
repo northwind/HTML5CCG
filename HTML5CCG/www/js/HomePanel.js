@@ -3,31 +3,28 @@
  */
 var HomePanel = Panel.extend({
     
-    init : function( id ){
-        this._super( id );
-        
-        return this;
+    toggleClass : function( id, exclude1, add ){
+        $( id ).removeClass( exclude1 ).addClass( add );
     },
     
     onShowAnimate : function(){
         
-        var buttons = this.el.find("#buttons a");
-        
-        for(var i=0; i<buttons.length; i++){
-            if ( i%2 == 0 ){
-                // $( buttons.eq(i) ).addClass("");
-            }else{
-                
-            }
-        }
-        
-        $( buttons.eq(0) ).addClass("kf-slide-left-small");
+        $("#buttons").removeClass("hide").addClass("show");
         
         var _self=this;
-       setTimeout(function(){
+        $("#buttons a:nth-child(1)").one( "webkitAnimationEnd", function(){
             _self.endAnimation();
-        },500);        
-        
-    }
+        } );
+    },
     
+   onHideAnimate : function(){
+        
+        $("#buttons").removeClass("show").addClass("hide");
+        
+        var _self=this;
+        $("#buttons a:nth-child(5)").one( "webkitAnimationEnd", function(){
+            _self.el.hide();
+            _self.endAnimation();
+        } );        
+    }    
 });

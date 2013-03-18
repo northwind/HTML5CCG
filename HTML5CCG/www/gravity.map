@@ -7,5 +7,6 @@
 	"todos/": "todos",
 	
 	"1.html": "index.html",
+	"home.html": "home.html",
 	"spec.html": "spec.html"
 }

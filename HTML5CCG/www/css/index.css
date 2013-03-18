@@ -1,10 +1,10 @@
             
-#HUD_TOP { border: none; height: 121px; position: absolute !important;}
+#HUD_TOP { border: none; height: 121px; }
 
 
-#HUD_BELOW { border: none; position: absolute !important; }
+#HUD_BELOW { border: none; height:54px; }
 
-#HUD_BELOW .ui-btn .ui-icon { width: 50px!important; height: 50px!important; margin-left: -8px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; background-size: 50px 50px; left: 20%; }
+#HUD_BELOW .ui-btn .ui-icon { width: 50px!important; height: 50px!important; margin-left: -8px !important; background-size: contain; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; background-size: 50px 50px; left: 20%; }
 #HUD_BELOW .ui-navbar li .ui-btn-icon-top .ui-btn-inner{ padding-top:28px; padding-bottom:5px; }
 #home .ui-icon { background: url(../images/icon_home.png) 50% 50% no-repeat;  }
 #fuben .ui-icon { background: url(../images/icon_fuben.png) 50% 50% no-repeat;  }
@@ -15,11 +15,8 @@
 
 #HUD_BELOW.ui-footer .ui-btn-icon-top .ui-icon { top:1px; }
 
+#content { background:#5e340a; }
 #content > div{ display:none; }
-#content #homePanel { display:block; }
-
-
-
 
 /*home panel */
 #team { height : 133px; width:100%; background: url(../images/team.png) 50% 50% no-repeat ; background-size: contain; }
@@ -27,35 +24,71 @@
 #team .avatar:first-child { margin-left: 36px; position:relative; right : 15px; }
 
 #buttons { padding-top:10px; }
-#buttons > a{ text-decoration:none; margin-left:25px; margin-top:13px; display:inline-block; width: 120px; height:25px; background: url(../images/button_small.png) 50% 50% no-repeat; background-size: contain; text-align:center; color: white; font-size:14px; padding-top:8px; background-size: contain; } 
+#buttons > a{ position:relative; text-decoration:none; margin-left:25px; margin-top:13px; display:inline-block; width: 120px; height:25px; background: url(../images/button_small.png) 50% 50% no-repeat; background-size: contain; text-align:center; color: white; font-size:14px; padding-top:8px; background-size: contain; } 
+
+#buttons.show a:nth-child(1){ -webkit-animation: kf-slide-left 250ms forwards;}
+#buttons.show a:nth-child(3){ -webkit-animation: kf-slide-left 350ms forwards;}
+#buttons.show a:nth-child(5){ -webkit-animation: kf-slide-left 450ms forwards;}
+#buttons.show a:nth-child(2){ -webkit-animation: kf-slide-right 250ms forwards; }
+#buttons.show a:nth-child(4){ -webkit-animation: kf-slide-right 350ms forwards; }
+#buttons.show a:nth-child(6){ -webkit-animation: kf-slide-right 450ms forwards; }
+
+#buttons.hide a:nth-child(1){ -webkit-animation: kf-slide-left-back 450ms forwards;}
+#buttons.hide a:nth-child(3){ -webkit-animation: kf-slide-left-back 350ms forwards; }
+#buttons.hide a:nth-child(5){ -webkit-animation: kf-slide-left-back 250ms forwards; }
+#buttons.hide a:nth-child(2){ -webkit-animation: kf-slide-right-back 450ms forwards; }
+#buttons.hide a:nth-child(4){ -webkit-animation: kf-slide-right-back 350ms forwards; }
+#buttons.hide a:nth-child(6){ -webkit-animation: kf-slide-right-back 250ms forwards; }
+
+@-webkit-keyframes kf-slide-left {
+  0% { left:-80px; }
+  100%{ left:0px; }
+}
+@-webkit-keyframes kf-slide-left-back {
+  0% { left:0px; }
+  100%{ left:-180px; }
+}
+@-webkit-keyframes kf-slide-right {
+  0% { right:-80px; }
+  100%{ right:0px; }
+}
+@-webkit-keyframes kf-slide-right-back {
+  0% { right:0px; }
+  100%{ right:-180px; }
+}
+
+/*levels panel */
+#fubenPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
+#fubenPanel > a { position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
+#fubenPanel > a > span { position:relative; top:10px; left:30px; color:#fff; text-shadow:2px 2px #000000; }
 
 
-div.normal-effect[data-name="bell-bottom"].invoke {
-  position: absolute;
-  visibility:visible;
-  opacity : 1;
-  top:45px;
-  
-  -webkit-animation: kf-bell-bottom-show 1050ms linear 0ms;
+#fubenPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
+#fubenPanel.show a:nth-child(2){ -webkit-animation: kf-fb-slide-right 300ms forwards;}
+#fubenPanel.show a:nth-child(3){ -webkit-animation: kf-fb-slide-right 350ms forwards;}
+#fubenPanel.show a:nth-child(4){ -webkit-animation: kf-fb-slide-right 400ms forwards; }
+#fubenPanel.show a:nth-child(5){ -webkit-animation: kf-fb-slide-right 450ms forwards; }
+#fubenPanel.show a:nth-child(6){ -webkit-animation: kf-fb-slide-right 500ms forwards; }
+#fubenPanel.show a:nth-child(7){ -webkit-animation: kf-fb-slide-right 500ms forwards; }
+#fubenPanel.show a:nth-child(8){ -webkit-animation: kf-fb-slide-right 500ms forwards; }
+
+#fubenPanel.hide a:nth-child(1){ -webkit-animation: kf-fb-slide-right-back 250ms forwards;}
+#fubenPanel.hide a:nth-child(2){ -webkit-animation: kf-fb-slide-right-back 300ms forwards;}
+#fubenPanel.hide a:nth-child(3){ -webkit-animation: kf-fb-slide-right-back 350ms forwards;}
+#fubenPanel.hide a:nth-child(4){ -webkit-animation: kf-fb-slide-right-back 400ms forwards; }
+#fubenPanel.hide a:nth-child(5){ -webkit-animation: kf-fb-slide-right-back 450ms forwards; }
+#fubenPanel.hide a:nth-child(6){ -webkit-animation: kf-fb-slide-right-back 500ms forwards; }
+#fubenPanel.hide a:nth-child(7){ -webkit-animation: kf-fb-slide-right-back 500ms forwards; }
+#fubenPanel.hide a:nth-child(8){ -webkit-animation: kf-fb-slide-right-back 500ms forwards; }
+
+@-webkit-keyframes kf-fb-slide-right {
+  0% { left:120px; }
+  100%{left:0px; }
+}
+@-webkit-keyframes kf-fb-slide-right-back {
+  0% { left:0px; }
+  100%{ left:280px; }
 }
 
 
-.kf-slide-left-small{
-    opacity : 1;
-    position:relative;
-    left:45px;
-    
-    -webkit-animation: kf-slide-left-small 350ms linear 0ms;
-}
 
-
-@-webkit-keyframes kf-slide-left-small {
-  0% {
-      opacity:0.3;
-      left:0px;
-  }
-  100%{
-      opacity: 1.0;
-      left:45px;
-  }
-}
