@@ -23,7 +23,7 @@ var HomePanel = Panel.extend({
         
         var _self=this;
         $("#buttons a:nth-child(5)").one( "webkitAnimationEnd", function(){
-            _self.el.hide();
+            _self.el.removeClass("showPanel");
             _self.endAnimation();
         } );        
     }    

@@ -6,7 +6,9 @@
 	"spec/": "spec",
 	"todos/": "todos",
 	
+	"config.xml": "config.xml",
 	"1.html": "index.html",
 	"home.html": "home.html",
+	"list.html": "list.html",
 	"spec.html": "spec.html"
 }

@@ -50,9 +50,9 @@ var app = {
 
 $( function(){
     
+    $("#content").height( $("body").height() - $("#HUD_TOP").outerHeight(true) - $("#HUD_BELOW").outerHeight() );
+
     function initAll(){
-                
-        $("#content").height( $("body").height() - $("#HUD_TOP").outerHeight(true) - $("#HUD_BELOW").outerHeight() );
         
         //init router
         PanelRouter.initPanels([{
@@ -61,6 +61,9 @@ $( function(){
         },{
             id : "#fubenPanel",
             panel : LevelsPanel
+        },{
+            id : "#strategyPanel",
+            panel : StrategyPanel
         }]);
                 
         //init hud below
@@ -68,17 +71,26 @@ $( function(){
             e.preventDefault();
             
             var target = $(this).attr( "href" );
-            
-            PanelRouter.showPanel( target );
+            if ( target == "#fightPanel" ){
+                $( "#popupFight" ).popup( "open", {
+                    x : e.clientX, y : e.clientY - 10
+                } );
+            }else{
+                PanelRouter.showPanel( target );
+            }
             
             return false;
         } );        
         
         //default panel
-        $("#fuben").tap();
+        $("#home").tap();
+        // $("#fuben").tap();
     }
     
-    initAll();
+    $("#MainScene").one( "pagebeforeshow", function(){
+        initAll();
+    } );
+    
 } );
 
 

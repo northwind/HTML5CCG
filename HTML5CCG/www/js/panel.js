@@ -24,7 +24,7 @@ var Panel = Observable.extend({
         this.callback = callback;
         this.scope = scope;
         
-        this.el.show();
+        this.el.addClass("showPanel");
         this.onShowAnimate();
         
         return this;

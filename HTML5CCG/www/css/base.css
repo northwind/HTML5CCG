@@ -1,18 +1,15 @@
-body.ios [data-role="page"],
-body.ios [data-role="dialog"] {
-  -webkit-transform-style: preserve-3d;
-}
 body {
-  font-family: 'Hiragino Kaku Gothic ProN', serif;
+  font-family: serif;
   font-size: 14px;
   font-weight: bold;
+  width:320px;
   -webkit-user-select: none;
-  width: 320px;
   position: relative;
   min-height:330px;
   margin: 0px;
   padding:0px;
 }
+.ios body{ height:100%; }
 body:lang(en) {
   font-size: 12.6px;
 }

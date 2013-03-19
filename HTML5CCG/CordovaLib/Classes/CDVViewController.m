@@ -449,7 +449,6 @@
     if (!self.webView) {
         self.webView = [self newCordovaViewWithFrame:webViewBounds];
         self.webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-        self.webView.scrollView.bounces = false;
         self.webView.scrollView.scrollEnabled = false;
         self.webView.scrollView.showsHorizontalScrollIndicator = false;
         

@@ -1,0 +1,27 @@
+
+/*levels panel */
+#fubenPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
+#fubenPanel > a { position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
+#fubenPanel > a > span { position:relative; top:10px; left:30px; color:#fff; text-shadow:2px 2px #000000; }
+
+
+#fubenPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms infinite alternate forwards;}
+#fubenPanel.show a:nth-child(2){ -webkit-animation: kf-fb-slide-right 300ms infinite alternate forwards;}
+#fubenPanel.show a:nth-child(3){ -webkit-animation: kf-fb-slide-right 350ms infinite alternate forwards;}
+#fubenPanel.show a:nth-child(4){ -webkit-animation: kf-fb-slide-right 400ms infinite alternate forwards; }
+#fubenPanel.show a:nth-child(5){ -webkit-animation: kf-fb-slide-right 450ms infinite alternate forwards; }
+#fubenPanel.show a:nth-child(6){ -webkit-animation: kf-fb-slide-right 500ms infinite alternate forwards; }
+#fubenPanel.show a:nth-child(7){ -webkit-animation: kf-fb-slide-right 510ms infinite alternate forwards; }
+#fubenPanel.show a:nth-child(8){ -webkit-animation: kf-fb-slide-right 520ms infinite alternate forwards; }
+
+@-webkit-keyframes kf-fb-slide-right {
+  0% { -webkit-transform: translate(0px,0px); }
+  100%{ -webkit-transform: translate(120px,0px); }
+}
+@-webkit-keyframes kf-fb-slide-right-back {
+  0% { left:0px; }
+  100%{ left:280px; }
+}
+
+
+
