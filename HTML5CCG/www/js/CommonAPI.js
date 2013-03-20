@@ -20,7 +20,7 @@ var XHRPoll = ( function(){
 
 var CommonAPI = Observable.extend({
     
-    url  : "/api/",
+    url  : "api/",
     version : "1.0",
     language : "en",
     

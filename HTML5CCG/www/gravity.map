@@ -5,14 +5,15 @@
 	"res/": "res",
 	"spec/": "spec",
 	"todos/": "todos",
+	"api/": "api",
 	
-	"config.xml": "config.xml",
+	//"api/getPlayerInfo/123" : "server/user_123.json",
+		
 	"notice.html" : "notice.html",
 	"1.html": "index.html",
 	"home.html": "home.html",
 	"list.html": "list.html",
 	"spec.html": "spec.html",
 	
-	"api/getPlayerInfo/123" : "server/user_123.json"
-	
+	"config.xml": "config.xml"
 }

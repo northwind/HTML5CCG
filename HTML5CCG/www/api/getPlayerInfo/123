@@ -1,0 +1,11 @@
+{
+    "v" : "1.0",
+    "code" : 0,
+    "language" : "en",
+    "stamp" : 13482732432,
+    "method" : "getPlayerInfo",
+    "data" : {
+        "id" : 123,
+        "name" : "多新鲜啊11421"
+    }
+}
