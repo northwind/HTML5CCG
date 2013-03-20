@@ -45,11 +45,11 @@ _.extend(Backbone.LocalStorage.prototype, {
     if (!model.id) {
         model.id = guid();
         model.set(model.idAttribute, model.id);
-    }
+    } 
     this.localStorage().setItem(this.name+"-"+model.id, JSON.stringify(model));
     this.records.push(model.id.toString());
     this.save();
-    return model.toJSON();
+    return model;
   },
 
   // Update a model by replacing its copy in `this.data`.
@@ -100,19 +100,27 @@ Backbone.LocalStorage.sync = window.Store.sync = Backbone.localSync = function(m
     };
   }
 
+  var force = options && options.force || true;
   var resp;
-
-  switch (method) {
-    case "read":    resp = model.id != undefined ? store.find(model) : store.findAll(); break;
-    case "create":  resp = store.create(model);                            break;
-    case "update":  resp = store.update(model);                            break;
-    case "delete":  resp = store.destroy(model);                           break;
+  
+  if ( !force ){
+      switch (method) {
+        case "read":    resp = model.id != undefined ? store.find(model) : store.findAll(); break;
+        case "create":  resp = store.create(model);                            break;
+        case "update":  resp = store.update(model);                            break;
+        case "delete":  resp = store.destroy(model);                           break;
+      }
   }
-
-  if (resp) {
-    options.success(resp);
+  if ( !force && resp ) {
+     options.success(resp);
   } else {
-    options.error('Record not found.');
+      
+      RequestManager.getPlayerInfo( model.id, function( response ){
+          resp = store.create( response );
+          options.success(resp);
+      }, function( msg ){
+          options.error( msg );
+      }, this );
   }
 };
 

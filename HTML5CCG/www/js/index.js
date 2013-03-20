@@ -91,6 +91,19 @@ $( function(){
         //default panel
         $("#home").tap();
         // $("#fuben").tap();
+        
+        //show player info
+        var pModel = new PlayerModel( {
+            id : "123"
+        } );
+        
+        pModel.fetch( {
+            force : true,
+            success : function( model ){
+                $("#playerName").text( model.get("name") );
+            }
+        } );
+        
     }
     
     $("#MainScene").one( "pagebeforeshow", function(){

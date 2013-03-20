@@ -1,0 +1,22 @@
+[{
+    fid:1,
+    name:"陵墓"
+},{
+    fid:2,
+    name:"城墙"
+},{
+    fid:3,
+    name:"地穴"
+},{
+    fid:4,
+    name:"STAM"
+},{
+    fid:5,
+    name:"通灵"
+},{
+    fid:6,
+    name:"监狱"
+},{
+    fid:7,
+    name:"血色"
+}];
