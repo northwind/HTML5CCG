@@ -7,6 +7,7 @@
 	"todos/": "todos",
 	
 	"config.xml": "config.xml",
+	"notice.html" : "notice.html",
 	"1.html": "index.html",
 	"home.html": "home.html",
 	"list.html": "list.html",

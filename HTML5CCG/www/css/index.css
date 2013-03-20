@@ -87,6 +87,52 @@
   100%{ -webkit-transform:translate(280px,0px); }
 }
 
+/*shop panel */
+#shopPanel .buttons { padding-top:10px; padding-bottom: 20px; }
+#shopPanel .buttons > a{ position:relative; text-decoration:none; margin-left:25px; margin-top:13px; display:inline-block; width: 120px; height:25px; background: url(../images/button_small.png) 50% 50% no-repeat; background-size: contain; text-align:center; color: white; font-size:14px; padding-top:8px; background-size: contain; } 
+
+#shopPanel.show .buttons a:nth-child(1){ -webkit-animation: kf-slide-left 250ms forwards;}
+#shopPanel.show .buttons a:nth-child(3){ -webkit-animation: kf-slide-left 300ms forwards;}
+#shopPanel.show .buttons a:nth-child(2){ -webkit-animation: kf-slide-right 250ms forwards; }
+#shopPanel.show .buttons a:nth-child(4){ -webkit-animation: kf-slide-right 300ms forwards; }
+
+#shopPanel.hide .buttons a:nth-child(1){ -webkit-animation: kf-slide-left-back 350ms forwards;}
+#shopPanel.hide .buttons a:nth-child(3){ -webkit-animation: kf-slide-left-back 300ms forwards; }
+#shopPanel.hide .buttons a:nth-child(2){ -webkit-animation: kf-slide-right-back 350ms forwards; }
+#shopPanel.hide .buttons a:nth-child(4){ -webkit-animation: kf-slide-right-back 300ms forwards; }
+
+#shopPanel iframe { width:98%; margin:0 auto; height:225px; }
+
+/*friends panel */
+#friendsPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
+#friendsPanel > a { position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
+#friendsPanel > a > span { position:relative; top:-25px; line-height:50px; color:#fff; text-shadow:2px 2px #000000; }
+
+#friendsPanel > a span::before { width:50px; height:50px; content:""; position:relative; top:25px;margin-right: 10px; display: inline-block;  }
+#friendsPanel > a:nth-child(1) span::before { background: url(../images/avatars/avatar_1.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(2) span::before { background: url(../images/avatars/avatar_2.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(3) span::before { background: url(../images/avatars/avatar_3.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(4) span::before { background: url(../images/avatars/avatar_4.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(5) span::before { background: url(../images/avatars/avatar_5.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(6) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(7) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(8) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(9) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
+
+#friendsPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
+#friendsPanel.show a:nth-child(2){ -webkit-animation: kf-fb-slide-right 300ms forwards;}
+#friendsPanel.show a:nth-child(3){ -webkit-animation: kf-fb-slide-right 350ms forwards;}
+#friendsPanel.show a:nth-child(4){ -webkit-animation: kf-fb-slide-right 400ms forwards; }
+#friendsPanel.show a:nth-child(5){ -webkit-animation: kf-fb-slide-right 450ms forwards; }
+#friendsPanel.show a:nth-child(6){ -webkit-animation: kf-fb-slide-right 500ms forwards; }
+
+#friendsPanel.hide a:nth-child(1){ -webkit-animation: kf-fb-slide-right-back 250ms forwards;}
+#friendsPanel.hide a:nth-child(2){ -webkit-animation: kf-fb-slide-right-back 300ms forwards;}
+#friendsPanel.hide a:nth-child(3){ -webkit-animation: kf-fb-slide-right-back 350ms forwards;}
+#friendsPanel.hide a:nth-child(4){ -webkit-animation: kf-fb-slide-right-back 400ms forwards; }
+#friendsPanel.hide a:nth-child(5){ -webkit-animation: kf-fb-slide-right-back 450ms forwards; }
+#friendsPanel.hide a:nth-child(6){ -webkit-animation: kf-fb-slide-right-back 500ms forwards; }
+
 /*strategy panel */
 #strategyPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
 #strategyPanel > a { position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }

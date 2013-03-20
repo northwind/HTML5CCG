@@ -62,6 +62,12 @@ $( function(){
             id : "#fubenPanel",
             panel : LevelsPanel
         },{
+            id : "#shopPanel",
+            panel : ShopPanel
+        },{
+            id : "#friendsPanel",
+            panel : FriendsPanel
+        },{
             id : "#strategyPanel",
             panel : StrategyPanel
         }]);
