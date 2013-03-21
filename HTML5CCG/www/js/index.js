@@ -62,6 +62,12 @@ $( function(){
             id : "#fubenPanel",
             panel : LevelsPanel
         },{
+            id : "#levelPanel",
+            panel : LevelPanel
+        },{
+            id : "#readyPanel",
+            panel : ReadyPanel
+        },{
             id : "#shopPanel",
             panel : ShopPanel
         },{
@@ -93,11 +99,11 @@ $( function(){
         // $("#fuben").tap();
         
         //show player info
-        var pModel = new PlayerModel( {
+        window.playerModel = new PlayerModel( {
             id : "123"
         } );
         
-        pModel.fetch( {
+        playerModel.fetch( {
             force : true,
             success : function( model ){
                 $("#playerName").text( model.get("name") );
@@ -108,6 +114,65 @@ $( function(){
     
     $("#MainScene").one( "pagebeforeshow", function(){
         initAll();
+    } );
+    
+    //begin battle
+    $( "#BattleScene" ).on( "pageshow", function( event, ui ) {
+        
+    }).on( "pagebeforecreate", function( event, ui ) {
+        
+        var myTeam = [{
+            id : 1,
+            type : 1,
+            hp : 100
+        },{
+            id : 5,
+            type : 2,
+            hp : 100
+        },{
+        },{
+            id : 2,
+            type : 1,
+            hp : 100
+        },{
+            id : 4,
+            type : 3,
+            hp : 100
+        },{
+            id : 3,
+            type : 4,
+            hp : 100
+        }];
+        
+        var enemyTeam = [{
+            id : 10,
+            type : 5,
+            hp : 100
+        },{
+            id : 11,
+            type : 6,
+            hp : 100
+        },{
+            id : 10,
+            type : 5,
+            hp : 100
+        },{
+            id : 11,
+            type : 6,
+            hp : 100
+        },{
+            id : 10,
+            type : 5,
+            hp : 100
+        },{
+            id : 11,
+            type : 6,
+            hp : 100
+        }];
+        
+        var battle = new BattleScene("#BattleScene");
+        battle.setTeam( myTeam, enemyTeam );
+        battle.begin();
     } );
     
 } );

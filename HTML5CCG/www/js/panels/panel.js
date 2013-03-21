@@ -24,12 +24,18 @@ var Panel = Observable.extend({
         this.callback = callback;
         this.scope = scope;
         
+        this.prepareShow();
+        
         this.el.addClass("showPanel");
         this.onShowAnimate();
         
         return this;
     },
     
+    prepareShow : function(){
+        
+    },
+        
     onShowAnimate : function(){
         this.endAnimation();
     },

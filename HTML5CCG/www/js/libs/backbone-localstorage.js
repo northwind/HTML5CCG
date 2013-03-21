@@ -114,13 +114,22 @@ Backbone.LocalStorage.sync = window.Store.sync = Backbone.localSync = function(m
   if ( !force && resp ) {
      options.success(resp);
   } else {
-      
-      RequestManager.getPlayerInfo( model.id, function( response ){
-          resp = store.create( response );
-          options.success(resp);
-      }, function( msg ){
-          options.error( msg );
-      }, this );
+      if ( model.constructor == PlayerModel ){
+          RequestManager.getPlayerInfo( model.id, function( response ){
+              resp = store.create( response );
+              options.success(resp);
+          }, function( msg ){
+              options.error( msg );
+          }, this );
+      }else if ( model.constructor == LevelManager ){
+          RequestManager.getLevels( model.player.id, function( response ){
+              response.id = guid();
+              resp = store.create( response );
+              options.success(resp);
+          }, function( msg ){
+              options.error( msg );
+          }, this );          
+      }
   }
 };
 

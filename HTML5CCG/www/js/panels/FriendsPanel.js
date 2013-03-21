@@ -5,7 +5,7 @@ var FriendsPanel = Panel.extend({
     
     onShowAnimate : function(){
         
-        this.el.removeClass("hide").addClass("show").scrollTop(0);
+        this.el.removeClass("hide").addClass("show");
         
         var _self=this;
         this.el.children("a:nth-child(4)").one( "webkitAnimationEnd", function(){
@@ -15,7 +15,7 @@ var FriendsPanel = Panel.extend({
     
    onHideAnimate : function(){
         
-        this.el.removeClass("show").addClass("hide").scrollTop(0);
+        this.el.removeClass("show").addClass("hide");
         
         var _self=this;
         this.el.children("a:nth-child(1)").one( "webkitAnimationEnd", function(){
