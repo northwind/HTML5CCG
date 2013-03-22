@@ -1,19 +1,27 @@
 
 #BattleScene{ min-height:480px !important; overflow:hidden; position:relative; }
-
+#returnMain{ position: absolute;color: yellow; }
 .battleBg1 { width:100%; height:580px; bottom:0px; position:absolute; background: url(../images/bg/bg_1.png) 50% 100% no-repeat ; background-size:contain; }
 
 #myTeam { position:absolute; width:100%; height : 200px; top: 260px; }
 #enemyTeam { position:absolute; width:100%; height : 200px; top:20px; }
 
-
 .card { margin-top:10px; display:inline-block; margin-right:30px; width:60px; height:75px; background-size: contain; }
-.card > i { display:block; height:5px; width:100%; position:relative; background:#6af700; }
-
+.card > i { display:block; height:3px; margin:0 auto; width:90%; position:relative; background:#6af700; }
 .card_0 { margin-left:40px; }
 .card_3 { margin-left:40px; }
 
+.attackPoint{ display:block; text-shadow:none; position:absolute; width:50px; height:20px; visibility: hidden; }
+.decrease { color:red;font-size:32px; font-style: bold; }
+.attackPoint.show { visibility:visible; -webkit-animation: kf-attack-point 600ms forwards; }
+@-webkit-keyframes kf-attack-point {
+    0% {-webkit-transform: scale(0); }
+    27% {-webkit-transform: scale(1);}
+    82% {-webkit-transform: scale(1);}
+    100% {-webkit-transform: scale(0);}    
+}
 
+/* actions  */
 .action_hide { -webkit-animation: kf-action-hide 1450ms; }
 @-webkit-keyframes kf-action-hide {
   0% { opacity: 1.0 }
@@ -29,3 +37,66 @@
     100% { -webkit-transform: rotate(0) translate(0px,0px); }
 }
 
+.action_pulse { -webkit-animation: kf-action-pulse 450ms; }
+@-webkit-keyframes kf-action-pulse {
+    0% { -webkit-transform: scale(1); } 
+    50% { -webkit-transform: scale(1.02) translateY(-10px); }
+    100% { -webkit-transform: scale(1) translateY(0px);}
+}
+
+.action_shake { -webkit-animation: kf-action-shake 200ms; }
+@-webkit-keyframes kf-action-shake {
+    0%, 100% {-webkit-transform: translate(0px,0px);}
+    50% {-webkit-transform: translate(-6px,-2px);}
+}
+
+/* normal-effect */
+.normal-effect { pointer-events: none; visibility: hidden; }
+.normal-effect.show{ visibility: visible; }
+.redcircle { position:absolute; height:64px; width:64px; background: url(../images/battle/2l.png) 50% 50% no-repeat ; background-size:contain; }
+.redcircle.show { -webkit-animation: kf-effect-rotate 800ms forwards;  }
+.yellowcircle { position:absolute; height:64px; width:64px; background: url(../images/battle/4l.png) 50% 50% no-repeat ; background-size:contain; }
+.yellowcircle.show { -webkit-animation: kf-effect-rotate 800ms forwards;  }
+@-webkit-keyframes kf-effect-rotate {
+    0% { opacity:0; -webkit-transform: scale(1.0,1.0); }
+    20% {opacity: 1; -webkit-transform: scale(3.0,0.5); }
+    45% {opacity: 1;-webkit-transform: scale(1.0,1.0) rotate(0deg);  }
+    85% {opacity: 1; }
+    100% { opacity: 0; -webkit-transform: rotate(-720deg) }   
+}
+
+.explode { position:absolute; height:71px; width:80px; background: url(../images/battle/explode.png) 50% 50% no-repeat ; background-size:contain;}
+.explode.show { visibility:visible; -webkit-animation: kf-effect-explode 400ms forwards; }
+@-webkit-keyframes kf-effect-explode {
+    0% { -webkit-transform: scale(0); opacity: 0; }
+    70% { -webkit-transform: scale(1); opacity: 1; }
+    100% { -webkit-transform: scale(10); opacity: 0; }
+}
+
+.fire { position:absolute; height:79px; width:112px; background: url(../images/battle/fire.png) 50% 50% no-repeat ; background-size:contain;}
+.fire.show { visibility:visible; -webkit-animation: kf-effect-fire 400ms forwards; }
+@-webkit-keyframes kf-effect-fire {
+    0% { -webkit-transform: scale(1.0,1.0); }
+    100% { -webkit-transform: scale(2.5,1.0) translateY(1px);  }
+}
+
+.heal { position:absolute; height:52px; width:69px; background: url(../images/battle/heal.png) 50% 50% no-repeat ; background-size:contain;}
+.heal.show { visibility:visible; -webkit-animation: kf-effect-heal 500ms forwards; }
+@-webkit-keyframes kf-effect-heal {
+    0% { -webkit-transform: scale(1.5) translateY(0px) rotateY(0deg); }
+    100% { -webkit-transform: scale(1.5) translateY(-14px) rotateY(720deg);  }
+}
+
+.water { position:absolute; height:105px; width:73px; background: url(../images/battle/water.png) 50% 50% no-repeat ; background-size:contain;}
+.water.show { visibility:visible; -webkit-animation: kf-effect-water 500ms forwards; }
+@-webkit-keyframes kf-effect-water {
+    0% { -webkit-transform: scale(1.0) rotateY(0deg); }
+    100% { -webkit-transform: scale(1.0) rotateY(720deg);  }
+}
+
+.wind { position:absolute; height:70px; width:85px; background: url(../images/battle/wind.png) 50% 50% no-repeat ; background-size:contain;}
+.wind.show { visibility:visible; -webkit-animation: kf-effect-wind 500ms forwards; }
+@-webkit-keyframes kf-effect-wind {
+    0% { -webkit-transform: scale(1.0) rotateX(0deg) translateX(0px); }
+    100% { -webkit-transform: scale(1.0) rotateX(720deg) translateX(-50px);  }
+}

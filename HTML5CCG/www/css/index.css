@@ -1,3 +1,4 @@
+
 #BeginScene{ height:480px; }
 #BeginScene > a { display:block; width:100%; height:100%; background: url(../images/intro.PNG) 50% 50% no-repeat ; background-size: contain;}
 
@@ -167,5 +168,9 @@
 
 /*ready panel */
 #readyPanel { height:100%; }
-#readyPanel > a { display:block; width:100%; height:100%; cursor:pointer; background: url(../images/ready.PNG) 50% 50% no-repeat ; background-size: contain;}
+#readyPanel > a { display:block; width:100%; height:100%; cursor:pointer; background: url(../images/ready.png) 50% 50% no-repeat ; background-size: contain;}
+
+#readyPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
+#readyPanel.hide a:nth-child(1){ -webkit-animation: kf-fb-slide-right-back 250ms forwards;}
+
 

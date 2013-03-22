@@ -112,14 +112,17 @@ $( function(){
         
     }
     
-    $("#MainScene").one( "pagebeforeshow", function(){
-        initAll();
-    } );
+    initAll();
+    // $("#MainScene").one( "pagebeforeshow", function(){
+        // initAll();
+    // } );
     
     //begin battle
     $( "#BattleScene" ).on( "pageshow", function( event, ui ) {
         
     }).on( "pagebeforecreate", function( event, ui ) {
+        
+        PanelRouter.showPanel( "#levelPanel" );
         
         var myTeam = [{
             id : 1,

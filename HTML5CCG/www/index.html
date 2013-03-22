@@ -75,7 +75,7 @@ under the License.
     </head>
     <body>
         <div data-role="page" data-dom-cache="false" id="BeginScene">
-            <a href="#MainScene" style="font-size: 0px;"> </a>
+            <a href="#MainScene" data-transition="slide" style="font-size: 0px;"> </a>
         </div>
         <!-- Home -->
         <div data-role="page" data-dom-cache="true" id="MainScene">
@@ -112,7 +112,7 @@ under the License.
                     </script>
                 </div>       
                 <div id="readyPanel" >
-                    <a href="#BattleScene" style="font-size: 0px;"> </a>
+                    <a href="#BattleScene" data-transition="slide" style="font-size: 0px;"> </a>
                 </div>                           
                 <div id="fightPanel" >
                     <div data-role="popup" data-dismissible="true" data-history="false" id="popupFight">
@@ -189,7 +189,26 @@ under the License.
                     <script id="cardEmptyTemplate" type="text/x-jquery-tmpl">
                         <div class="card card_${index}" >
                         </div>
-                    </script>                             
+                    </script>  
+             <b class="attackPoint" id='number1'></b>
+             <b class="attackPoint" id='number2'></b>
+             <b class="attackPoint" id='number3'></b>
+             <b class="attackPoint" id='number4'></b>
+             <b class="attackPoint" id='number5'></b>
+             <b class="attackPoint" id='number6'></b>  
+             
+             <!-- <figure class="assets">
+             </figure> -->
+             
+             <div class="normal-effect redcircle"></div>
+             <div class="normal-effect yellowcircle"></div>
+             <div class="normal-effect explode"></div>
+             <div class="normal-effect fire"></div>
+             <div class="normal-effect heal"></div>
+             <div class="normal-effect water"></div>
+             <div class="normal-effect wind"></div>
+             
+             <a id="returnMain" href="#MainScene">back</a>                         
         </div>
 
         <script type="text/javascript">

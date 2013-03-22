@@ -23,6 +23,8 @@ var BattleScene = Observable.extend({
             data = myTeamData[i];
             data.index = i;
             card = new CardController( data );
+            card.enemy = false;
+            card.scene = this;
             
             this.myTeam.push( card );
         }
@@ -31,6 +33,8 @@ var BattleScene = Observable.extend({
             data = enemyTeamData[i];
             data.index = i;
             card = new CardController( data );
+            card.enemy = true;
+            card.scene = this;
             
             this.enemyTeam.push( card );
         }
@@ -63,8 +67,12 @@ var BattleScene = Observable.extend({
     
     begin : function(){
         
-        //my team take the first move
-        this.myMove( 0 );
+        var _self = this;
+        setTimeout( function(){
+            //my team take the first move
+            _self.myMove( 0 );            
+        }, 650 );
+
     },
     
     myMove : function( index ){
@@ -79,8 +87,12 @@ var BattleScene = Observable.extend({
         }
         
         card.action( function(){
-            if ( this.isContinueToMove() )
-                this.enemyMove( index );
+            if ( this.isContinueToMove() ){
+                var _self = this;
+                setTimeout( function(){
+                    _self.enemyMove( index );    
+                }, 600 );
+            }
             else
                 this.checkWinLose();
                 
@@ -98,8 +110,12 @@ var BattleScene = Observable.extend({
         }
         
         card.action( function(){
-            if ( this.isContinueToMove() )
-                this.myMove( index+1 );
+            if ( this.isContinueToMove() ){
+                var _self = this;
+                setTimeout( function(){
+                    _self.myMove( index+1 );    
+                }, 600 );                
+            }
             else
                 this.checkWinLose();
         }, this );        
