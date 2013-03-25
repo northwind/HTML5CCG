@@ -76,6 +76,9 @@ $( function(){
         },{
             id : "#strategyPanel",
             panel : StrategyPanel
+        },{
+            id : "#sellPanel",
+            panel : SellPanel
         }]);
                 
         //init hud below
@@ -109,7 +112,6 @@ $( function(){
                 $("#playerName").text( model.get("name") );
             }
         } );
-        
     }
     
     initAll();

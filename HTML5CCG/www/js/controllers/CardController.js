@@ -143,7 +143,10 @@ var CardController = Observable.extend({
         } ).addClass("show decrease").appendTo( this.scene.el );
         
         //card animation
-        this.el.children("img").addClass( this.hurtCls );
+        var _self = this;
+        this.el.children("img").addClass( this.hurtCls ).one( "webkitAnimationEnd", function(){
+            $(this).removeClass( _self.hurtCls );
+        } );
     }
     
 });

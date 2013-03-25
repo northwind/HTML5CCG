@@ -24,7 +24,7 @@
 
 /*home panel */
 #team { height : 133px; width:100%; background: url(../images/team.png) 50% 50% no-repeat ; background-size: contain; }
-#team .avatar { margin-top: 28px; display:inline-block; height:50px; width:50px; background:red;  }
+#team .avatar { margin-top: 28px; display:inline-block; height:50px; width:50px; }
 #team .avatar:first-child { margin-left: 36px; position:relative; right : 15px; }
 
 #buttons { padding-top:10px; }
@@ -91,7 +91,7 @@
 }
 
 /*shop panel */
-#shopPanel .buttons { padding-top:10px; padding-bottom: 20px; }
+#shopPanel .buttons { padding-top:10px; padding-bottom: 10px; }
 #shopPanel .buttons > a{ position:relative; text-decoration:none; margin-left:25px; margin-top:13px; display:inline-block; width: 120px; height:25px; background: url(../images/button_small.png) 50% 50% no-repeat; background-size: contain; text-align:center; color: white; font-size:14px; padding-top:8px; background-size: contain; } 
 
 #shopPanel.show .buttons a:nth-child(1){ -webkit-animation: kf-slide-left 250ms forwards;}
@@ -104,7 +104,9 @@
 #shopPanel.hide .buttons a:nth-child(2){ -webkit-animation: kf-slide-right-back 350ms forwards; }
 #shopPanel.hide .buttons a:nth-child(4){ -webkit-animation: kf-slide-right-back 300ms forwards; }
 
-#shopPanel iframe { width:98%; margin:0 auto; height:225px; }
+#shopPanel #frameContent { -webkit-overflow-scrolling:touch ; overflow: hidden; width:98%; margin:0 auto; height:180px; visibility: hidden; }
+#shopPanel.show #frameContent { visibility: visible; }
+
 
 /*friends panel */
 #friendsPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
@@ -117,10 +119,7 @@
 #friendsPanel > a:nth-child(3) span::before { background: url(../images/avatars/avatar_3.png) 50% 50% no-repeat ; background-size: contain;}
 #friendsPanel > a:nth-child(4) span::before { background: url(../images/avatars/avatar_4.png) 50% 50% no-repeat ; background-size: contain;}
 #friendsPanel > a:nth-child(5) span::before { background: url(../images/avatars/avatar_5.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(6) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(7) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(8) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(9) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel > a:nth-child(1n+6) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
 
 #friendsPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
 #friendsPanel.show a:nth-child(2){ -webkit-animation: kf-fb-slide-right 300ms forwards;}
@@ -173,4 +172,24 @@
 #readyPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
 #readyPanel.hide a:nth-child(1){ -webkit-animation: kf-fb-slide-right-back 250ms forwards;}
 
+/*sell panel */
+#sellPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
+#sellPanel > a { cursor:pointer; position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
+#sellPanel > a > span { top: -22px; left:5px; position:relative; line-height:50px; color:#fff; text-shadow:2px 2px #000000; }
+#sellPanel > a > input { float:right; width:15px; height:15px; position: relative;top: 13px;right: 20px; }
+#sellPanel > .ui-btn { width:100px; }
+
+#sellPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
+#sellPanel.show a:nth-child(2){ -webkit-animation: kf-fb-slide-right 300ms forwards;}
+#sellPanel.show a:nth-child(3){ -webkit-animation: kf-fb-slide-right 350ms forwards;}
+#sellPanel.show a:nth-child(4){ -webkit-animation: kf-fb-slide-right 400ms forwards; }
+#sellPanel.show a:nth-child(5){ -webkit-animation: kf-fb-slide-right 450ms forwards; }
+#sellPanel.show a:nth-child(1n+6){ -webkit-animation: kf-fb-slide-right 500ms forwards; }
+
+#sellPanel.hide a:nth-child(1){ -webkit-animation: kf-fb-slide-right-back 250ms forwards;}
+#sellPanel.hide a:nth-child(2){ -webkit-animation: kf-fb-slide-right-back 300ms forwards;}
+#sellPanel.hide a:nth-child(3){ -webkit-animation: kf-fb-slide-right-back 350ms forwards;}
+#sellPanel.hide a:nth-child(4){ -webkit-animation: kf-fb-slide-right-back 400ms forwards; }
+#sellPanel.hide a:nth-child(5){ -webkit-animation: kf-fb-slide-right-back 450ms forwards; }
+#sellPanel.hide a:nth-child(1n+6){ -webkit-animation: kf-fb-slide-right-back 500ms forwards; }
 

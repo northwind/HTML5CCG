@@ -58,8 +58,11 @@ var PanelRouter = Observable.extend({
         this.current.hide( function(){
           this.current = null;
         }, this );
-    }
+    },
     
+    getPanel : function( id ){
+        return this.panels[ id ];
+    }
 });
 
 var PanelRouter = new PanelRouter();

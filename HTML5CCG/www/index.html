@@ -59,6 +59,7 @@ under the License.
         <script type="text/javascript" src="js/controllers/PlayerController.js"></script>
         
         <script type="text/javascript" src="js/panels/panel.js"></script>
+        <script type="text/javascript" src="js/panels/SellPanel.js"></script>        
         <script type="text/javascript" src="js/panels/HomePanel.js"></script>
         <script type="text/javascript" src="js/panels/LevelPanel.js"></script>        
         <script type="text/javascript" src="js/panels/LevelsPanel.js"></script>
@@ -85,7 +86,9 @@ under the License.
             <div id="content">
                 <div id="homePanel" >
                     <div id="team">
-                        <a href="javasciprt:void(0)" class="avatar"></a>
+                        <a href="javasciprt:void(0)" class="avatar">
+                            <img src="images/avatars/avatar_2.png" width="50px" height="50px" />
+                        </a>
                         <a href="javasciprt:void(0)" class="avatar"></a>
                         <a href="javasciprt:void(0)" class="avatar"></a>
                         <a href="javasciprt:void(0)" class="avatar"></a>
@@ -126,7 +129,9 @@ under the License.
                         <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="javasciprt:void(0)" id="buyPackageBtn">购买背包</a>
                         <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="javasciprt:void(0)" id="stonePointBtn">符石抽奖</a>                        
                     </div>
-                    <iframe frameborder="no" unselectable="yes" allowtransparency="no" src="/notice.html"></iframe>
+                    <div id="frameContent">
+                        <iframe height="100%" width="100%" frameborder="no" scrolling="yes" allowtransparency="no" src="notice.html"></iframe>
+                    </div>
                 </div>
                 <div id="friendsPanel" >
                     <a href="javasciprt:void(0)"> <span>奸商</span> </a>
@@ -145,6 +150,17 @@ under the License.
                     <a href="javasciprt:void(0)"> <span>攻略</span> </a>
                     <a href="javasciprt:void(0)"> <span>系统设置</span> </a>
                 </div>
+                <div id="sellPanel" >
+                    <button id="okSell" >确定</button>
+                    <script id="sellPanelTemplate" type="text/x-jquery-tmpl">
+                        <a href="javasciprt:void(0)">
+                            <input data-role="none" type="checkbox">
+                            <img width="50px" height="50px" src="images/avatars/avatar_${id}.png" >                        
+                            <span>${name}</span>
+                        </a>                         
+                    </script>                    
+                   
+                </div>                
             </div>
             <div id="HUD_BELOW" data-theme="a" data-role="footer" data-position="static">
                 <div data-role="navbar" data-grid="false" >
@@ -197,9 +213,6 @@ under the License.
              <b class="attackPoint" id='number5'></b>
              <b class="attackPoint" id='number6'></b>  
              
-             <!-- <figure class="assets">
-             </figure> -->
-             
              <div class="normal-effect redcircle"></div>
              <div class="normal-effect yellowcircle"></div>
              <div class="normal-effect explode"></div>
@@ -208,7 +221,7 @@ under the License.
              <div class="normal-effect water"></div>
              <div class="normal-effect wind"></div>
              
-             <a id="returnMain" href="#MainScene">back</a>                         
+             <a id="returnMain" data-transition="slide" href="#MainScene">back</a>                         
         </div>
 
         <script type="text/javascript">

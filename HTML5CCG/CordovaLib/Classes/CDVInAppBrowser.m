@@ -236,7 +236,7 @@
     self.webView.clipsToBounds = YES;
     self.webView.contentMode = UIViewContentModeScaleToFill;
     self.webView.contentStretch = CGRectFromString(@"{{0, 0}, {1, 1}}");
-    self.webView.multipleTouchEnabled = YES;
+    self.webView.multipleTouchEnabled = NO;
     self.webView.opaque = YES;
     self.webView.scalesPageToFit = NO;
     self.webView.userInteractionEnabled = YES;
