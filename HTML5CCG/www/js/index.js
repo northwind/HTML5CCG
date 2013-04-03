@@ -50,10 +50,23 @@ var app = {
 
 $( function(){
     
-    $("#content").height( $("body").height() - $("#HUD_TOP").outerHeight(true) - $("#HUD_BELOW").outerHeight() );
+    // alert( "window=" + $( window ).height() + " html=" + $( "html" ).height() + " body=" + $( "body" ).height() + " top=" + $("#HUD_TOP").outerHeight(true) + " below=" +  $("#HUD_BELOW").outerHeight() );
+    $("#content").height( $( window ).height() - $("#HUD_TOP").outerHeight(true) - $("#HUD_BELOW").outerHeight() );
 
     function initAll(){
         
+        //show player info
+        window.playerModel = new PlayerModel( {
+            id : "123"
+        } );
+        
+        playerModel.fetch( {
+            force : true,
+            success : function( model ){
+                $("#playerName").text( model.get("name") );
+            }
+        } );
+                
         //init router
         PanelRouter.initPanels([{
             id : "#homePanel",
@@ -82,7 +95,7 @@ $( function(){
         }]);
                 
         //init hud below
-        $("#HUD_BELOW li a").tap( function( e ){
+        $("#HUD_BELOW a").tap( function( e ){
             e.preventDefault();
             
             var target = $(this).attr( "href" );
@@ -99,19 +112,6 @@ $( function(){
         
         //default panel
         $("#home").tap();
-        // $("#fuben").tap();
-        
-        //show player info
-        window.playerModel = new PlayerModel( {
-            id : "123"
-        } );
-        
-        playerModel.fetch( {
-            force : true,
-            success : function( model ){
-                $("#playerName").text( model.get("name") );
-            }
-        } );
     }
     
     initAll();

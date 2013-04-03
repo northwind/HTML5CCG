@@ -2,15 +2,25 @@
  * @author Ye Tong
  */
 var LevelsPanel = Panel.extend({
-    
-    prepareShow : function(){
-        var levels = playerModel.levelManager.toJSON();
+    container   : null,
         
-        this.el.children("a").remove();
-        $("#fubenTemplate").tmpl( levels ).appendTo( this.el ).click( function(){
+    prepareShow : function(){
+        var container = this.el.children(".scroll_container");
+        if ( container.children().length > 0 )
+            return;
+        
+        this.container = container;
+        var levels = playerModel.levelManager.toJSON();
+        $("#fubenTemplate").tmpl( levels ).appendTo( container ).tap( function(){
             PanelRouter.showPanel( "#levelPanel" );
         } );
         
+        var scroller = new EasyScroller(container[0], {
+            scrollingX: false,
+            scrollingY: true,
+            zooming: false
+        });
+                
     }, 
     
     onShowAnimate : function(){
@@ -18,7 +28,7 @@ var LevelsPanel = Panel.extend({
         this.el.removeClass("hide").addClass("show");
         
         var _self=this;
-        this.el.children("a:nth-child(4)").one( "webkitAnimationEnd", function(){
+        this.container.children("a:nth-child(2)").one( "webkitAnimationEnd", function(){
             _self.endAnimation();
         } );      
     },
@@ -28,7 +38,7 @@ var LevelsPanel = Panel.extend({
         this.el.removeClass("show").addClass("hide");
         
         var _self=this;
-        this.el.children("a:nth-child(2)").one( "webkitAnimationEnd", function(){
+        this.container.children("a:nth-child(2)").one( "webkitAnimationEnd", function(){
             _self.el.removeClass("showPanel");
             _self.endAnimation();
         } );    

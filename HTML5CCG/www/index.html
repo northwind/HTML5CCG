@@ -46,6 +46,9 @@ under the License.
         <script type="text/javascript" src="js/libs/underscore.js"></script>
         <script type="text/javascript" src="js/libs/backbone.js"></script>
         <script type="text/javascript" src="js/libs/backbone-localstorage.js"></script>
+        <script type="text/javascript" src="js/libs/Animate.js"></script>
+        <script type="text/javascript" src="js/libs/Scroller.js"></script>
+        <script type="text/javascript" src="js/libs/EasyScroller.js"></script>        
         <script type="text/javascript" src="js/CommonAPI.js"></script>
         <script type="text/javascript" src="js/RequestManager.js"></script>
 
@@ -108,11 +111,13 @@ under the License.
                     <script id="fubenTemplate" type="text/x-jquery-tmpl">
                         <a fid="${id}" href="javasciprt:void(0)"> <span>${name}</span> </a>
                     </script>
+                    <div class="scroll_container"></div>
                 </div>
                 <div class="levels" id="levelPanel" >
                     <script id="levelTemplate" type="text/x-jquery-tmpl">
                         <a fid="${id}" href="javasciprt:void(0)"><b>体力:${energy}</b><span>${name}</span></a>
                     </script>
+                    <div class="scroll_container"></div>
                 </div>       
                 <div id="readyPanel" >
                     <a href="#BattleScene" data-transition="slide" style="font-size: 0px;"> </a>
@@ -134,15 +139,17 @@ under the License.
                     </div>
                 </div>
                 <div id="friendsPanel" >
-                    <a href="javasciprt:void(0)"> <span>奸商</span> </a>
-                    <a href="javasciprt:void(0)"> <span>Dyss</span> </a>
-                    <a href="javasciprt:void(0)"> <span>小66</span> </a>
-                    <a href="javasciprt:void(0)"> <span>Ayakashi</span> </a>
-                    <a href="javasciprt:void(0)"> <span>mt</span> </a>
-                    <a href="javasciprt:void(0)"> <span>Mark</span> </a>
-                    <a href="javasciprt:void(0)"> <span>不给力</span> </a>
-                    <a href="javasciprt:void(0)"> <span>小夜色</span> </a>
-                    <a href="javasciprt:void(0)"> <span>爱猫的人</span> </a>                    
+                    <div class="scroll_container">
+                        <a href="javasciprt:void(0)"> <span>奸商</span> </a>
+                        <a href="javasciprt:void(0)"> <span>Dyss</span> </a>
+                        <a href="javasciprt:void(0)"> <span>小66</span> </a>
+                        <a href="javasciprt:void(0)"> <span>Ayakashi</span> </a>
+                        <a href="javasciprt:void(0)"> <span>mt</span> </a>
+                        <a href="javasciprt:void(0)"> <span>Mark</span> </a>
+                        <a href="javasciprt:void(0)"> <span>不给力</span> </a>
+                        <a href="javasciprt:void(0)"> <span>小夜色</span> </a>
+                        <a href="javasciprt:void(0)"> <span>爱猫的人</span> </a> 
+                    </div>                   
                 </div>
                 <div id="strategyPanel" >
                     <a href="javasciprt:void(0)"> <span>英雄图鉴</span> </a>
@@ -159,32 +166,18 @@ under the License.
                             <span>${name}</span>
                         </a>                         
                     </script>                    
-                   
+                   <div id="sell_scroller">  
+                        <div class="scroll_container"></div>
+                   </div>
                 </div>                
             </div>
-            <div id="HUD_BELOW" data-theme="a" data-role="footer" data-position="static">
-                <div data-role="navbar" data-grid="false" >
-                    <ul>
-                        <li>
-                            <a id="home" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#homePanel">主页</a>
-                        </li>
-                        <li>
-                            <a id="fuben" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#fubenPanel">副本</a>
-                        </li>
-                        <li>
-                            <a id="fight" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#fightPanel">战斗</a>
-                        </li>
-                        <li>
-                            <a id="shop" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#shopPanel">商店</a>
-                        </li>
-                        <li>
-                            <a id="friends" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#friendsPanel">好友</a>
-                        </li>
-                        <li>
-                            <a id="strategy" data-icon="custom" data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="span" data-inline="true" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-up-a" href="#strategyPanel">攻略</a>
-                        </li>
-                    </ul>
-                </div>
+            <div id="HUD_BELOW">
+                            <a id="home" href="#homePanel"></a>
+                            <a id="fuben" href="#fubenPanel"></a>
+                            <a id="fight" href="#fightPanel"></a>
+                            <a id="shop" href="#shopPanel"></a>
+                            <a id="friends" href="#friendsPanel"></a>
+                            <a id="strategy" href="#strategyPanel"></a>
             </div>
         </div>
 

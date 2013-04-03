@@ -28,7 +28,7 @@ var HomePanel = Panel.extend({
         $("#buttons").removeClass("show").addClass("hide");
         
         var _self=this;
-        $("#buttons a:nth-child(5)").one( "webkitAnimationEnd", function(){
+        $("#buttons a:nth-child(3)").one( "webkitAnimationEnd", function(){
             _self.el.removeClass("showPanel");
             _self.endAnimation();
         } );        

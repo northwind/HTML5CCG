@@ -6,21 +6,20 @@
 #playerName { color:#fff; position:absolute; top : 3px; left : 37px;text-shadow: none;font-size: 14px; }
 
 
-#HUD_BELOW { border: none; height:54px; }
-#HUD_BELOW .ui-btn .ui-icon { width: 50px!important; height: 50px!important; margin-left: -8px !important; background-size: contain; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; background-size: 50px 50px; left: 20%; }
-#HUD_BELOW .ui-navbar li .ui-btn-icon-top .ui-btn-inner{ padding-top:28px; padding-bottom:5px; }
-#home .ui-icon { background: url(../images/icon_home.png) 50% 50% no-repeat;  }
-#fuben .ui-icon { background: url(../images/icon_fuben.png) 50% 50% no-repeat;  }
-#fight .ui-icon { background: url(../images/icon_fight.png) 50% 50% no-repeat;  }
-#shop .ui-icon { background: url(../images/icon_shop.png) 50% 50% no-repeat;  }
-#friends .ui-icon { background: url(../images/icon_friends.png) 50% 50% no-repeat;  }
-#strategy .ui-icon { background: url(../images/icon_strategy.png) 50% 50% no-repeat;  }
+#HUD_BELOW { border: none; height:50px; background:#000000; }
+#HUD_BELOW a { display:block; margin-left: 3px; float:left; width: 50px; height: 50px; background-size: contain; }
+#home { background: url(../images/icon_home.png) 50% 50% no-repeat;  }
+#fuben { background: url(../images/icon_fuben.png) 50% 50% no-repeat;  }
+#fight { background: url(../images/icon_fight.png) 50% 50% no-repeat;  }
+#shop { background: url(../images/icon_shop.png) 50% 50% no-repeat;  }
+#friends { background: url(../images/icon_friends.png) 50% 50% no-repeat;  }
+#strategy { background: url(../images/icon_strategy.png) 50% 50% no-repeat;  }
 
 #HUD_BELOW.ui-footer .ui-btn-icon-top .ui-icon { top:1px; }
 
 #content { background:#5e340a; position:relative; }
 #content > div{ position:absolute; visibility: hidden; overflow-y: hidden; overflow-x: hidden; width: 100%;}
-#content > div.showPanel { visibility:visible; overflow-y: auto;}
+#content > div.showPanel { visibility:visible; overflow-y: hidden;}
 
 /*home panel */
 #team { height : 133px; width:100%; background: url(../images/team.png) 50% 50% no-repeat ; background-size: contain; }
@@ -62,10 +61,11 @@
 }
 
 /*levels panel */
-.levels { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
-.levels > a { cursor: pointer; position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
-.levels > a > span { line-height: 50px; position:relative; left:30px; color:#fff; text-shadow:2px 2px #000000; }
-.levels > a > b { float:right; line-height: 50px; right:15px; color: #6af700; font-size: 14px; text-shadow:2px 2px #000000; position:relative; }
+.levels { height:100%; overflow-y: hidden; }
+.scroll_container { position: absolute; margin-left:20px; }
+.levels a { cursor: pointer; position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
+.levels a > span { line-height: 50px; position:relative; left:30px; color:#fff; text-shadow:2px 2px #000000; }
+.levels a > b { float:right; line-height: 50px; right:15px; color: #6af700; font-size: 14px; text-shadow:2px 2px #000000; position:relative; }
 
 .levels.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
 .levels.show a:nth-child(2){ -webkit-animation: kf-fb-slide-right 300ms forwards;}
@@ -104,22 +104,22 @@
 #shopPanel.hide .buttons a:nth-child(2){ -webkit-animation: kf-slide-right-back 350ms forwards; }
 #shopPanel.hide .buttons a:nth-child(4){ -webkit-animation: kf-slide-right-back 300ms forwards; }
 
-#shopPanel #frameContent { -webkit-overflow-scrolling:touch ; overflow: hidden; width:98%; margin:0 auto; height:180px; visibility: hidden; }
-#shopPanel.show #frameContent { visibility: visible; }
+#shopPanel #frameContent { overflow: hidden; width:98%; margin:0 auto; height:180px; visibility: hidden; display:none; }
+#shopPanel.show #frameContent { visibility: visible; display:block; }
 
 
 /*friends panel */
-#friendsPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
-#friendsPanel > a { position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
-#friendsPanel > a > span { position:relative; top:-25px; line-height:50px; color:#fff; text-shadow:2px 2px #000000; }
+#friendsPanel { height:100%; overflow-y: auto; overflow-x:hidden;}
+#friendsPanel a { position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
+#friendsPanel a > span { position:relative; top:-25px; line-height:50px; color:#fff; text-shadow:2px 2px #000000; }
 
-#friendsPanel > a span::before { width:50px; height:50px; content:""; position:relative; top:25px;margin-right: 10px; display: inline-block;  }
-#friendsPanel > a:nth-child(1) span::before { background: url(../images/avatars/avatar_1.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(2) span::before { background: url(../images/avatars/avatar_2.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(3) span::before { background: url(../images/avatars/avatar_3.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(4) span::before { background: url(../images/avatars/avatar_4.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(5) span::before { background: url(../images/avatars/avatar_5.png) 50% 50% no-repeat ; background-size: contain;}
-#friendsPanel > a:nth-child(1n+6) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel a span::before { width:50px; height:50px; content:""; position:relative; top:25px;margin-right: 10px; display: inline-block;  }
+#friendsPanel a:nth-child(1) span::before { background: url(../images/avatars/avatar_1.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel a:nth-child(2) span::before { background: url(../images/avatars/avatar_2.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel a:nth-child(3) span::before { background: url(../images/avatars/avatar_3.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel a:nth-child(4) span::before { background: url(../images/avatars/avatar_4.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel a:nth-child(5) span::before { background: url(../images/avatars/avatar_5.png) 50% 50% no-repeat ; background-size: contain;}
+#friendsPanel a:nth-child(1n+6) span::before { background: url(../images/avatars/avatar_6.png) 50% 50% no-repeat ; background-size: contain;}
 
 #friendsPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
 #friendsPanel.show a:nth-child(2){ -webkit-animation: kf-fb-slide-right 300ms forwards;}
@@ -136,7 +136,7 @@
 #friendsPanel.hide a:nth-child(1n+6){ -webkit-animation: kf-fb-slide-right-back 500ms forwards; }
 
 /*strategy panel */
-#strategyPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
+#strategyPanel { height:100%; overflow-y: auto; overflow-x:hidden; }
 #strategyPanel > a { position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
 #strategyPanel > a > span { position:relative; top:-25px; line-height:50px; color:#fff; text-shadow:2px 2px #000000; }
 
@@ -173,11 +173,12 @@
 #readyPanel.hide a:nth-child(1){ -webkit-animation: kf-fb-slide-right-back 250ms forwards;}
 
 /*sell panel */
-#sellPanel { height:100%; overflow-y: auto; overflow-x:hidden; padding-left: 20px;}
-#sellPanel > a { cursor:pointer; position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
-#sellPanel > a > span { top: -22px; left:5px; position:relative; line-height:50px; color:#fff; text-shadow:2px 2px #000000; }
-#sellPanel > a > input { float:right; width:15px; height:15px; position: relative;top: 13px;right: 20px; }
-#sellPanel > .ui-btn { width:100px; }
+#sellPanel { height:100%; overflow-y: auto; overflow-x:hidden;}
+#sellPanel a { cursor:pointer; position:relative; width:280px; height:48px; margin:10px 0px; text-decoration:none; display:block; background: url(../images/button_large.png) 50% 50% no-repeat ; background-size: contain; }
+#sellPanel a > span { top: -22px; left:5px; position:relative; line-height:50px; color:#fff; text-shadow:2px 2px #000000; }
+#sellPanel a > input { float:right; width:15px; height:15px; position: relative;top: 13px;right: 20px; }
+#sellPanel .ui-btn { width:100px; }
+#sell_scroller { overflow:hidden; position: relative; }
 
 #sellPanel.show a:nth-child(1){ -webkit-animation: kf-fb-slide-right 250ms forwards;}
 #sellPanel.show a:nth-child(2){ -webkit-animation: kf-fb-slide-right 300ms forwards;}
