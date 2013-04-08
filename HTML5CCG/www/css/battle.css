@@ -101,3 +101,9 @@
     0% { -webkit-transform: scale(1.0) rotateX(0deg) translateX(0px); }
     100% { -webkit-transform: scale(1.0) rotateX(720deg) translateX(-50px);  }
 }
+
+@media all and (-webkit-min-device-pixel-ratio:2) {
+    .battleBg1 {
+        background-image: url(../images/bg/bg_1@2x.png);
+    }
+}
