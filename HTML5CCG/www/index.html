@@ -36,6 +36,13 @@ under the License.
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/battle.css" />
 
+        <link rel="stylesheet" type="text/css" href="css/cb.base.en.css">
+        <link rel="stylesheet" type="text/css" href="css/cb.keyframes.en.css">
+        <link rel="stylesheet" type="text/css" href="css/cb.stage-effect.en.css">
+        <link rel="stylesheet" type="text/css" href="css/cb.battle.en.css">
+        <link rel="stylesheet" type="text/css" href="css/gacha-animation.en.css">
+        <link rel="stylesheet" type="text/css" href="css/gachabox.css">
+        
         <script type="text/javascript" src="js/libs/cordova-2.5.0.js"></script>
         <script type="text/javascript" charset="UTF-8" src="js/libs/base.js"></script>
         <script type="text/javascript" src="js/libs/observable.js"></script>
@@ -76,6 +83,10 @@ under the License.
         <script type="text/javascript" src="js/controllers/CardController.js"></script>
         <script type="text/javascript" src="js/battle.js"></script>
         
+        <script type="text/javascript" src="js/cb.base.js"></script>
+        <script type="text/javascript" src="js/cb.battle.js"></script>
+        <script type="text/javascript" src="js/gachabox-animation.js"></script>
+                
         <script>if ($(window).width() > 640) { $('meta[name=viewport]').attr('content','initial-scale=2, maximum-scale=2, width=320, height=device-height, user-scalable=no'); }</script>
     </head>
     <body>
@@ -130,10 +141,10 @@ under the License.
                 </div>
                 <div id="shopPanel" >
                     <div class="buttons">
-                        <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="javasciprt:void(0)" id="healthBtn">购买体力</a>   
-                        <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="javasciprt:void(0)" id="friendPointBtn">友情抽奖</a>
-                        <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="javasciprt:void(0)" id="buyPackageBtn">购买背包</a>
-                        <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="javasciprt:void(0)" id="stonePointBtn">符石抽奖</a>                        
+                        <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="#GachaScene" data-transition="slide" id="healthBtn">购买体力</a>   
+                        <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="#GachaScene" data-transition="slide"  id="friendPointBtn">友情抽奖</a>
+                        <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="#GachaScene" data-transition="slide" id="buyPackageBtn">购买背包</a>
+                        <a class="smallBtn" data-callback-event="webkitAnimationEnd" data-callback-count="1" href="#GachaScene" data-transition="slide" id="stonePointBtn">符石抽奖</a>                        
                     </div>
                     <div id="frameContent">
                         <iframe height="100%" width="100%" frameborder="no" scrolling="yes" allowtransparency="no" src="notice.html"></iframe>
@@ -207,17 +218,66 @@ under the License.
              <b class="attackPoint" id='number5'></b>
              <b class="attackPoint" id='number6'></b>  
              
-             <div class="normal-effect redcircle"></div>
-             <div class="normal-effect yellowcircle"></div>
-             <div class="normal-effect explode"></div>
-             <div class="normal-effect fire"></div>
-             <div class="normal-effect heal"></div>
-             <div class="normal-effect water"></div>
-             <div class="normal-effect wind"></div>
+             <div class="battle-normal-effect redcircle"></div>
+             <div class="battle-normal-effect yellowcircle"></div>
+             <div class="battle-normal-effect explode"></div>
+             <div class="battle-normal-effect fire"></div>
+             <div class="battle-normal-effect heal"></div>
+             <div class="battle-normal-effect water"></div>
+             <div class="battle-normal-effect wind"></div>
              
              <a id="returnMain" data-transition="slide" href="#MainScene">back</a>                         
         </div>
 
+        <div data-role="page" id="GachaScene" class="noscroll">
+            <div id="gachabox-scene">
+                
+            </div>
+            <div class="navigator-comment">
+                    式神喚出！
+            </div>            
+            <div class="navigator-comment">
+            </div>
+            <div class="indicator" style="display:none;"></div>
+            <div id="uiloader" class="ui-loader ui-corner-all ui-body-a ui-loader-default" style="display: none;">
+                <span class="ui-icon ui-icon-loading"></span><h1>loading</h1>
+            </div>
+        </div>
+        <figure class="assets">
+            <div data-role="normal-effect" data-name="circle" class="asset normal-effect invite" data-callback-event="webkitTransitionEnd" data-callback-count="5" style="">
+                <div class="circle-holder">
+                    <div class="circle-outer"></div>
+                    <div class="circle-inner"></div>
+                </div>
+            </div>
+            <div data-role="normal-effect" data-name="summon-beam" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="indicator" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1"></div>
+
+            <div data-role="normal-effect" data-name="halo" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="halo-once" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1"></div>
+            <div data-role="normal-effect" data-name="card" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style="">
+                <div class="monster"></div>
+            </div>
+            <div data-role="normal-effect" data-name="card-reveal" class="asset normal-effect" data-callback-event="webkitTransitionEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="card-summon" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="thunder-1" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1"></div>
+            <div data-role="normal-effect" data-name="thunder-2" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1"></div>
+            <div data-role="normal-effect" data-name="thunder-3" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1"></div>
+            <div data-role="normal-effect" data-name="shine" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            
+            <div data-role="sprite" data-name="background" class="asset sprite" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="sprite" data-name="sky" class="asset sprite" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="sky-mask" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="sky-thunder" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="window-left" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="window-right" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="bell" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="bell-shadow" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="bell-wave" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="bell-halo" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+            <div data-role="normal-effect" data-name="bell-bottom" class="asset normal-effect" data-callback-event="webkitAnimationEnd" data-callback-count="1" style=""></div>
+        </figure>
+                
         <script type="text/javascript">
             app.initialize();
         </script>

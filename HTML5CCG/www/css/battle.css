@@ -51,9 +51,9 @@
     50% {-webkit-transform: translateX(7px);}
 }
 
-/* normal-effect */
-.normal-effect { pointer-events: none; visibility: hidden; }
-.normal-effect.show{ visibility: visible; }
+/* battle-normal-effect */
+.battle-normal-effect { pointer-events: none; visibility: hidden; }
+.battle-normal-effect.show{ visibility: visible; }
 .redcircle { position:absolute; height:64px; width:64px; background: url(../images/battle/2l.png) 50% 50% no-repeat ; background-size:contain; }
 .redcircle.show { -webkit-animation: kf-effect-rotate 800ms forwards;  }
 .yellowcircle { position:absolute; height:64px; width:64px; background: url(../images/battle/4l.png) 50% 50% no-repeat ; background-size:contain; }

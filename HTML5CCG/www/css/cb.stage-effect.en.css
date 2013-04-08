@@ -1,0 +1,19 @@
+div.stage-effect[data-name="flash"] {
+  width: 100%;
+  height: 100%;
+}
+div.stage-effect[data-name="flash"] img {
+  content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=');
+}
+div.stage-effect[data-name="flash"].invoke {
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+}
+div.stage-effect[data-name="concentration"] {
+  width: 100%;
+  height: 100%;
+}
+div.stage-effect[data-name="concentration"].invoke {
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in 250ms;
+}

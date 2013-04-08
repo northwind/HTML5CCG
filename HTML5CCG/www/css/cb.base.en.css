@@ -1,0 +1,32 @@
+/* set of assets */
+figure.assets {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin:0;
+  padding:0;
+}
+figure.assets > * {
+  position: relative;
+}
+/* base element */
+.node {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.sprite:not(.touchable) {
+  pointer-events: none;
+}
+.sprite img {
+  vertical-align: bottom;
+}
+.layer {
+  width: 100%;
+  height: 100%;
+}
+.normal-effect:not(.invoke) {
+  visibility: hidden;
+}
